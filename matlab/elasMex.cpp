@@ -87,10 +87,10 @@ void mexFunction (int nlhs,mxArray *plhs[],int nrhs,const mxArray *prhs[]) {
   // get input pointers
   uint8_t*       I1     = (uint8_t*)mxGetPr(prhs[0]);
   uint8_t*       I2     = (uint8_t*)mxGetPr(prhs[1]);
-  const int32_t *I_dims = mxGetDimensions(prhs[0]);
+  const size_t *I_dims = mxGetDimensions(prhs[0]);
   
   // create outputs
-  int32_t D_dims[2] = {I_dims[0],I_dims[1]};
+  size_t D_dims[2] = {I_dims[0],I_dims[1]};
   if (param.subsampling) {
     D_dims[0] = I_dims[0]/2;
     D_dims[1] = I_dims[1]/2;
